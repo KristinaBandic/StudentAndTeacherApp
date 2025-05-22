@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Model.Common
 {
-    public class Class1
+    public interface ISubjectSchoolDomain
     {
+     int SubjectSchoolId { get; set; }
+        string Name { get; set; }
     }
 }
