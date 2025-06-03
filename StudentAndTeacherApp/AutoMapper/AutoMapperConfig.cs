@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using DAL.Entities;
+using Model;
 using Model.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using static StudentAndTeacherApp.Controllers.SubjectSchoolController;
 
 namespace StudentAndTeacherApp.AutoMapper
 {
@@ -12,7 +14,8 @@ namespace StudentAndTeacherApp.AutoMapper
     {
         public MappingProfile()
         {
-            CreateMap<SubjectSchool, ISubjectSchoolDomain>().ReverseMap();
+            CreateMap<SubjectSchool, SubjectSchoolDomain>().ReverseMap();
+            CreateMap<SubjectSchoolDomain, SubjectRest>().ReverseMap();
         }
     }
 }
