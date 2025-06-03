@@ -4,7 +4,9 @@ using Model.Common;
 using Repository.Common;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,10 +17,14 @@ namespace Repository
         private readonly MyContext _myContext;
         private readonly IMapper _mapper;
 
-       public TeacherRepository(MyContext myContext, IMapper mapper)
+       public TeacherRepository(MyContext myContext)
         {
+            var baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            var parentDir = Directory.GetParent(baseDir);
+            var path = parentDir.Parent.FullName.ToString();
+            var fullPath = Path.GetFullPath(path);
+            AppDomain.CurrentDomain.SetData("DataDirectory", fullPath);
             _myContext = myContext;
-            _mapper = mapper;
         }
 
         public Task<IEnumerable<ITeacherDomain>> GetAllAsync()

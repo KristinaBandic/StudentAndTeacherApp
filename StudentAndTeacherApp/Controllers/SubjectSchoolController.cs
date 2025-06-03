@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using Service;
 using Service.Common;
+using StudentAndTeacherApp.App_Start;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,12 +16,12 @@ namespace StudentAndTeacherApp.Controllers
     public class SubjectSchoolController : ApiController
     {
         private readonly ISubjectSchoolService _subjectService;
-        private readonly IMapper _mapper;
+        private IMapper _mapper=AutoMapperConfiguration.GetMapper();
 
-        public SubjectSchoolController(ISubjectSchoolService subjectService, IMapper mapper)
+        public SubjectSchoolController(ISubjectSchoolService subjectService)
         {
             _subjectService = subjectService;
-            _mapper = mapper;
+      
         }
         [HttpGet]
         public async Task<HttpResponseMessage> GetSubjectsAsync()
