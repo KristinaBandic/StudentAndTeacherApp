@@ -10,7 +10,7 @@
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(DAL.MyContext context)
@@ -20,12 +20,12 @@
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
 
-            var subject = new SubjectSchool();
-            subject.SubjectSchoolId = 1;
-            subject.Name = "hrvatski";
-            context.SubjectSchools.Add(subject);
+            //var subject = new SubjectSchool();
+            //subject.SubjectSchoolId = 1;
+            //subject.Name = "hrvatski";
+            //context.SubjectSchools.Add(subject);
 
-            base.Seed(context);
+            //base.Seed(context);
         }
     }
 }
