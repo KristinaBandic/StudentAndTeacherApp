@@ -14,8 +14,8 @@ namespace StudentAndTeacherApp.AutoMapper
     {
         public MappingProfile()
         {
-            CreateMap<SubjectSchool, SubjectSchoolDomain>().ReverseMap();
-            CreateMap<SubjectSchoolDomain, SubjectRest>().ReverseMap();
+            
+            CreateMap<ISubjectSchoolDomain, SubjectRest>().ReverseMap();
         }
     }
 }

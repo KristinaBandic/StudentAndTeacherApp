@@ -22,7 +22,8 @@ namespace Service
         {
             try
             {
-                return await genericRepository.GetAllAsync();
+                var subjects=await genericRepository.GetAllAsync();
+                return subjects;
             }
             catch (Exception ex)
             {

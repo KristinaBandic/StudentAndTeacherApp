@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DAL.Entities;
 using Model.Common;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace StudentAndTeacherApp.App_Start
             MapperConfiguration = new MapperConfiguration(ctf =>
             {
                 ctf.CreateMap<ISubjectSchoolDomain, SubjectRest>().ReverseMap();
+                ctf.CreateMap<ISubjectSchoolDomain, SubjectSchool>().ReverseMap();
             });
 
             Mapper=MapperConfiguration.CreateMapper();
