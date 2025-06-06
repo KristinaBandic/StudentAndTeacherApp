@@ -9,8 +9,8 @@ namespace Model
 {
     internal class TeacherDomain : ITeacherDomain
     {
-        public int TeacherId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int SubjectSchoolId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int TeacherId { get; set; }
+        public string Name { get; set; }
+        public int SubjectSchoolId { get; set; }
     }
 }
