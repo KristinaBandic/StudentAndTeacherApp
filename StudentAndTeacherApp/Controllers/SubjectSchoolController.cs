@@ -41,7 +41,7 @@ namespace StudentAndTeacherApp.Controllers
 
         public class SubjectRest
         {
-            public int Id { get; set; }
+            public int SubjectSchoolId { get; set; }
             public string Name { get; set; }
         }
     }
