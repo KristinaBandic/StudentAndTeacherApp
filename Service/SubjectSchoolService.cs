@@ -18,6 +18,26 @@ namespace Service
             this.genericRepository = genericRepository;
         }
 
+        public async Task<ISubjectSchoolDomain> CreateSubjectAsync(ISubjectSchoolDomain subject)
+        {
+            try
+            {
+             return await genericRepository.CreateAsync(subject);
+
+             
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error - Post subject", ex);
+            }
+        }
+
+        public async Task<string> CreateSubjectWithNameAsync(string name)
+        {
+            return await genericRepository.CreateWithNameAsync(name);
+        }
+
         public async Task<IEnumerable<ISubjectSchoolDomain>> GetAllAsync()
         {
             try

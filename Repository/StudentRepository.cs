@@ -27,6 +27,17 @@ namespace Repository
 
 
         }
+
+        public Task<IStudentDomain> CreateAsync(IStudentDomain model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<string> CreateWithNameAsync(string name)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<IEnumerable<IStudentDomain>> GetAllAsync()
         {
             try

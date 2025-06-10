@@ -11,5 +11,7 @@ namespace Repository.Common
 
         Task<IEnumerable<T>> GetAllAsync();
         Task<T> GetByIdAsync(int id);
+        Task<T> CreateAsync(T model);
+        Task<string> CreateWithNameAsync(string name);
     }
 }

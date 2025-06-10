@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DAL;
+using DAL.Entities;
 using Model;
 using Model.Common;
 using Repository.Common;
@@ -29,6 +30,34 @@ namespace Repository
             _context = context;
          
 
+        }
+
+        public Task<ISubjectSchoolDomain> CreateAsync(ISubjectSchoolDomain model)
+        {
+            try
+            {
+                var subjectSchool = new SubjectSchool();
+                subjectSchool.SubjectSchoolId = model.SubjectSchoolId;
+                subjectSchool.Name = model.Name;
+                 _context.SubjectSchools.Add(subjectSchool);
+                _context.SaveChanges();
+                return Task.FromResult(model);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error create data", ex.InnerException);
+            }
+        }
+
+        public Task<string> CreateWithNameAsync(string name)
+        {
+            var subjectSchool = new SubjectSchool();
+         
+            subjectSchool.Name = name;
+            _context.SubjectSchools.Add(subjectSchool);
+            _context.SaveChanges();
+            return Task.FromResult(name);
         }
 
         public Task<IEnumerable<ISubjectSchoolDomain>> GetAllAsync()

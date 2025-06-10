@@ -27,6 +27,16 @@ namespace Repository
             _myContext = myContext;
         }
 
+        public Task<ITeacherDomain> CreateAsync(ITeacherDomain model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<string> CreateWithNameAsync(string name)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<IEnumerable<ITeacherDomain>> GetAllAsync()
         {
             try
