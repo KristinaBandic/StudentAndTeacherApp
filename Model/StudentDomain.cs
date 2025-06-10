@@ -9,11 +9,11 @@ namespace Model
 {
     public class StudentDomain : IStudentDomain
     {
-        public int StudentId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Age { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Class { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int SubjectSchoolId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int TeacherId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int StudentId { get; set; }
+        public string Name { get; set; }
+        public int Age { get ; set; }
+        public string Class { get; set; }
+        public int SubjectSchoolId { get; set; }
+        public int TeacherId { get; set; }
     }
 }

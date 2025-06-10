@@ -9,7 +9,7 @@ namespace Model
 {
     public class SubjectSchoolDomain : ISubjectSchoolDomain
     {
-        public int SubjectSchoolId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int SubjectSchoolId { get ; set ; }
+        public string Name { get; set; }
     }
 }

@@ -10,5 +10,8 @@ namespace Service.Common
     public interface ISubjectSchoolService
     {
         Task<IEnumerable<ISubjectSchoolDomain>> GetAllAsync();
+        Task<ISubjectSchoolDomain> CreateSubjectAsync(ISubjectSchoolDomain subject);
+
+        Task<string> CreateSubjectWithNameAsync(string name);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Model.Common;
 using Service;
 using Service.Common;
 using StudentAndTeacherApp.App_Start;
@@ -39,9 +40,44 @@ namespace StudentAndTeacherApp.Controllers
             }
         }
 
+        [HttpPost]
+        public async Task<HttpResponseMessage> PostSubjectAsync([FromBody] SubjectRest subjectRest)
+        {
+            try
+            {
+                var domainModel = _mapper.Map<ISubjectSchoolDomain>(subjectRest);
+                await _subjectService.CreateSubjectAsync(domainModel);
+                return Request.CreateResponse(HttpStatusCode.OK, subjectRest);
+            }
+            catch (Exception ex)
+            {
+
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex.Message);
+            }
+         
+        }
+
+        [HttpPost]
+        [Route("naziv")]
+        public async Task<HttpResponseMessage> PostSubjectWithNameAsync([FromBody]string name)
+        {
+            try
+            {
+              
+                await _subjectService.CreateSubjectWithNameAsync(name);
+                return Request.CreateResponse(HttpStatusCode.OK, name);
+            }
+            catch (Exception ex)
+            {
+
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex.Message);
+            }
+
+        }
+
         public class SubjectRest
         {
-            public int Id { get; set; }
+            public int SubjectSchoolId { get; set; }
             public string Name { get; set; }
         }
     }
